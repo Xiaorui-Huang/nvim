@@ -5,7 +5,6 @@ lsp.preset('recommended')
 
 lsp.ensure_installed({
     "rust_analyzer",
-    "sumneko_lua"
 })
 
 -- don't initialize this language server
