@@ -1,5 +1,5 @@
 # nvim
-My Neovim configurations, made for cross system/OS portability
+My Neovim configurations, made for cross machine/OS portability
 
 ## Installation 
 1. Install Packer via provided script or at https://github.com/wbthomason/packer.nvim
@@ -7,11 +7,13 @@ My Neovim configurations, made for cross system/OS portability
 3. Souce the file with `:source` or `:so`
 4. Run `:PackerSync` within Neovim
 
+Note: plugin `nvim-treesitter` requires at least the latest stable Neovim
+
 ## Copilot
 Follow instructions here https://github.com/github/copilot.vim
 
 #### TL;DR
-1. Install Node.js - for Debian
+1. Install Node.js 16.x or above - for Debian
 
         curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
         sudo apt install -y nodejs
