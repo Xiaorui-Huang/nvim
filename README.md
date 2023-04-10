@@ -7,7 +7,7 @@ My Neovim configurations, made for cross machine/OS portability
 3. Souce the file with `:source` or `:so`
 4. Run `:PackerSync` within Neovim
 
-Note: plugin `nvim-treesitter` requires at least the latest stable Neovim
+Note: plugin `nvim-treesitter` requires at least the latest stable [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
 ## Copilot
 Follow instructions here https://github.com/github/copilot.vim
