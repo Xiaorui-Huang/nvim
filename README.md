@@ -1,11 +1,21 @@
 # nvim
 My Neovim configurations, made for cross machine/OS portability
 
-## Installation 
-1. Install Packer via provided script or at https://github.com/wbthomason/packer.nvim
-2. Open `lua/plugins.lua` with `nvim`
-3. Souce the file with `:source` or `:so`
-4. Run `:PackerSync` within Neovim
+## Installation
+1. Clone this repo at
+
+    * Linus/macOS
+        
+              ~/.config/nvim/pack/github/start/copilot.vim
+        
+    * Windows
+        
+            $HOME/AppData/Local/nvim/pack/github/start/copilot.vim
+        
+2. Install Packer via provided script or at https://github.com/wbthomason/packer.nvim
+3. Open `lua/plugins.lua` with `nvim`
+4. Souce the file with `:source` or `:so`
+5. Run `:PackerSync` within Neovim
 
 Note: plugin `nvim-treesitter` requires at least the latest stable [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
