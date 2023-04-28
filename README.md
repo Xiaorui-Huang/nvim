@@ -6,11 +6,11 @@ My Neovim configurations, made for cross machine/OS portability
 
     * Linus/macOS
         
-              ~/.config/nvim/pack/github/start/copilot.vim
+          ~/.config/nvim/pack/github/start/copilot.vim
         
     * Windows
         
-            $HOME/AppData/Local/nvim/pack/github/start/copilot.vim
+          $HOME/AppData/Local/nvim/pack/github/start/copilot.vim
         
 2. Install Packer via provided script or at https://github.com/wbthomason/packer.nvim
 3. Open `lua/plugins.lua` with `nvim`
