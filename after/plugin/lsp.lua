@@ -20,4 +20,4 @@ require('rust-tools').setup({
 })
 
 -- https://www.jvt.me/posts/2022/03/01/neovim-format-on-save/
-vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
