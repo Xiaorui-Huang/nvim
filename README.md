@@ -6,11 +6,11 @@ My Neovim configurations, made for cross machine/OS portability
 
     * Linus/macOS
         
-          git clone https://github.com/Xiaorui-Huang/nvim.git ~/.config/nvim
+          git clone git@github.com:Xiaorui-Huang/nvim.git ~/.config/nvim
         
     * Windows
         
-          git clone https://github.com/Xiaorui-Huang/nvim.git $HOME/AppData/Local/nvim
+          git clone git@github.com:Xiaorui-Huang/nvim.git $HOME/AppData/Local/nvim
         
 2. Install Packer via provided script or at https://github.com/wbthomason/packer.nvim
 3. Open `lua/plugins.lua` with `nvim`
