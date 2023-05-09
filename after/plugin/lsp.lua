@@ -1,7 +1,11 @@
 -- Learn the keybindings, see :help lsp-zero-keybindings
 -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
-local lsp = require('lsp-zero')
-lsp.preset('recommended')
+local lsp = require('lsp-zero').preset({})
+
+lsp.on_attach(function(client, bufnr)
+    lsp.default_keymaps({ buffer = bufnr })
+    vim.keymap.set("n", "H", "K", { buffer = true })
+end)
 
 lsp.ensure_installed({
     "rust_analyzer",
@@ -20,4 +24,4 @@ require('rust-tools').setup({
 })
 
 -- https://www.jvt.me/posts/2022/03/01/neovim-format-on-save/
-vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ async = false })]]
