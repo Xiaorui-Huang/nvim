@@ -41,10 +41,27 @@ vim.o.colorcolumn = "81"
 vim.o.hidden = false    -- When off a buffer is unloaded (including loss of undo information) when it is |abandon|ed.  When on a buffer becomes hidden when it is |abandon|ed.  A buffer displayed in another window does not become
 vim.o.autochdir = false -- When on, Vim will change the current working directory whenever you open a file, switch buffers, delete a buffer or open/close a window.
 
+-- if vim.g.vscode then
+--     -- VSCode extension
+-- else
+--     -- ordinary Neovim
+-- end
 
--- native nvim options
-if not vim.g.vscode then
-    vim.o.spell = true
-else
-    vim.opt.clipboard:append("unnamedplus")
+vim.o.spell = true
+vim.opt.clipboard:append("unnamedplus")
+
+local wsl_interop = os.getenv("WSL_INTEROP")
+if wsl_interop and wsl_interop:find("WSL") then
+    vim.g.clipboard = {
+      name = "WslClipboard",
+      copy = {
+        ['+'] = 'clip.exe',
+        ['*'] = 'clip.exe',
+      },
+      paste = {
+        ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Cli',
+        ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Cli',
+      },
+      cache_enabled = 0,
+    }
 end
