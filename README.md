@@ -25,9 +25,7 @@ Follow instructions here https://github.com/github/copilot.vim
 #### TL;DR
 1. Install Node.js 16.x or above - for Debian
 
-        curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
-        sudo apt install -y nodejs
-
+        brew install node
 
 2. clone the copilot repo - for Debian 
 
