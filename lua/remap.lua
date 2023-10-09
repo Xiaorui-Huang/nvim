@@ -8,9 +8,9 @@ if not vim.g.vscode then
     vim.keymap.set("v", "//", "y/\\V<C-R>=escape(@\",'/\\')<CR><CR>")
 
     -- system clipboard remap
-    vim.keymap.set("n", "<leader>y", "\"+y")
-    vim.keymap.set("v", "<leader>y", "\"+y")
-    vim.keymap.set("n", "<leader>Y", "\"+Y")
+    -- vim.keymap.set("n", "<leader>y", "\"+y")
+    -- vim.keymap.set("v", "<leader>y", "\"+y")
+    -- vim.keymap.set("n", "<leader>Y", "\"+Y")
 
     -- Window resizing
     vim.keymap.set("n", "<M-[>", ":resize -2<CR>")

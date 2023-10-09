@@ -35,7 +35,7 @@ vim.o.colorcolumn = "81"
 ---- causes problems when system clipboard doesn't support some special
 ---- characters, best to keep vim clipboard and system clipboard separate
 -- vim.opt.clipboard:append('unnamedplus')
-vim.o.mouse = "a"
+vim.o.mouse = ""
 
 -- special options
 vim.o.hidden = false -- When off a buffer is unloaded (including loss of undo information) when it is |abandon|ed.  When on a buffer becomes hidden when it is |abandon|ed.  A buffer displayed in another window does not become
