@@ -41,13 +41,13 @@ vim.o.mouse = ""
 vim.o.hidden = false    -- When off a buffer is unloaded (including loss of undo information) when it is |abandon|ed.  When on a buffer becomes hidden when it is |abandon|ed.  A buffer displayed in another window does not become
 vim.o.autochdir = false -- When on, Vim will change the current working directory whenever you open a file, switch buffers, delete a buffer or open/close a window.
 
--- if vim.g.vscode then
---     -- VSCode extension
--- else
---     -- ordinary Neovim
--- end
+if vim.g.vscode then
+    -- VSCode extension
+else
+    -- ordinary Neovim
+    vim.o.spell = true
+end
 
-vim.o.spell = true
 vim.opt.clipboard:append("unnamedplus")
 
 local wsl_interop = os.getenv("WSL_INTEROP")
