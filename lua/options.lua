@@ -45,7 +45,7 @@ if vim.g.vscode then
     -- VSCode extension
 else
     -- ordinary Neovim
-    vim.o.spell = true
+    -- vim.o.spell = true
 end
 
 vim.opt.clipboard:append("unnamedplus")
