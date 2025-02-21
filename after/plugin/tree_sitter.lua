@@ -1,6 +1,6 @@
 local config = {
     -- A list of parser names, or "all" (the four listed parsers should always be installed)
-    ensure_installed = { "c", "cpp", "lua", "vim", "python", "bash", "cmake", "gitcommit" },
+    ensure_installed = { "c", "cpp", "lua", "vim", "python", "bash", "cmake", "gitcommit", "markdown" },
     -- ensure_installed = { "c", "cpp", "lua", "vim", "rust", "python", "bash", "cmake", "gitcommit" },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -19,12 +19,12 @@ local config = {
     incremental_selection = {
         enable = true,
         keymaps = {
-            init_selection = '<TAB>',
-            scope_incremental = '<CR>',
-            node_incremental = '<TAB>',
-            node_decremental = '<S-TAB>',
+            init_selection = "gnn", -- set to `false` to disable one of the mappings
+            node_incremental = "grn",
+            scope_incremental = "grc",
+            node_decremental = "grm",
         },
-    }
+    },
 }
 
 -- native nvim config
@@ -36,6 +36,7 @@ if (not vim.g.vscode) then
         -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
         -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
         -- the name of the parser)
+        --
         -- list of language that will be disabled
         --disable = { "c", "rust" },
         -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files

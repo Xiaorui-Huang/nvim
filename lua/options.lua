@@ -30,12 +30,13 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.textwidth = 80
 vim.o.colorcolumn = "81"
+
 ---- fold settings
--- vim.o.foldmethod = "manual"
+vim.o.foldmethod = "manual" -- manual, syntax, indent etc, see :help fold.txt
 ---- causes problems when system clipboard doesn't support some special
 ---- characters, best to keep vim clipboard and system clipboard separate
 -- vim.opt.clipboard:append('unnamedplus')
-vim.o.mouse = ""
+vim.o.mouse = "nv" -- use "" to turn off
 
 -- special options
 vim.o.hidden = false    -- When off a buffer is unloaded (including loss of undo information) when it is |abandon|ed.  When on a buffer becomes hidden when it is |abandon|ed.  A buffer displayed in another window does not become
@@ -53,15 +54,15 @@ vim.opt.clipboard:append("unnamedplus")
 local wsl_interop = os.getenv("WSL_INTEROP")
 if wsl_interop and wsl_interop:find("WSL") then
     vim.g.clipboard = {
-      name = "WslClipboard",
-      copy = {
-        ['+'] = 'clip.exe',
-        ['*'] = 'clip.exe',
-      },
-      paste = {
-        ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Cli',
-        ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Cli',
-      },
-      cache_enabled = 0,
+        name = "WslClipboard",
+        copy = {
+            ['+'] = 'clip.exe',
+            ['*'] = 'clip.exe',
+        },
+        paste = {
+            ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Cli',
+            ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Cli',
+        },
+        cache_enabled = 0,
     }
 end

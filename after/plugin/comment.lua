@@ -2,13 +2,13 @@ require('Comment').setup({
     ignore = '^$',
     ---LHS of toggle mappings in NORMAL mode
     toggler = {
-	line = '<leader>cc',
-	block = '<leader>bc',
+        line = '<leader>cc',
+        block = '<leader>bc',
     },
     ---LHS of operator-pending mappings in NORMAL and VISUAL mode
     opleader = {
-	line = '<leader>c',
-	block = '<leader>b',
+        line = '<leader>c',
+        block = '<leader>bl',
     },
     extra = {
         ---Add comment on the line above
@@ -19,4 +19,3 @@ require('Comment').setup({
         eol = '<leader>cA',
     },
 })
-

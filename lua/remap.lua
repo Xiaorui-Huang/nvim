@@ -1,7 +1,6 @@
 if not vim.g.vscode then
-
     -- file explorer
-    vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+    -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- overrided by nvim-tree
 
     -- search remaps
     -- https://vim.fandom.com/wiki/Search_for_visually_selected_text
@@ -44,9 +43,8 @@ if not vim.g.vscode then
     vim.keymap.set("i", "<M-k>", "<Esc>:m .-2<CR>==gi")
 
     -- Modifications
-    vim.keymap.set("n", "J", "mzJ`z") -- let the cursor stay in place with mark at z
-    vim.keymap.set("n", "<C-d>", "<C-d>zz") -- center cursor after move
-    vim.keymap.set("n", "<C-u>", "<C-u>zz") -- center cursor after move
+    vim.keymap.set("n", "J", "mzJ`z")         -- let the cursor stay in place with mark at z
+    vim.keymap.set("n", "<C-d>", "<C-d>zz")   -- center cursor after move
+    vim.keymap.set("n", "<C-u>", "<C-u>zz")   -- center cursor after move
     vim.keymap.set("x", "<leader>p", "\"_dP") -- preserve original when pasting over
-
 end
