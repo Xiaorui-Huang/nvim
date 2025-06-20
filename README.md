@@ -12,10 +12,9 @@ My Neovim configurations, made for cross machine/OS portability
         
           git clone git@github.com:Xiaorui-Huang/nvim.git $HOME/AppData/Local/nvim
         
-2. Install Packer via provided script or at https://github.com/wbthomason/packer.nvim
-3. Open `lua/plugins.lua` with `nvim`
-4. Souce the file with `:source` or `:so`
-5. Run `:PackerSync` within Neovim
+2. Launch `nvim` once. It will automatically install [lazy.nvim](https://github.com/folke/lazy.nvim).
+3. Run `:Lazy sync` within Neovim to install plugins.
+   You can also run `lazy_unix.sh` (or `lazy_windows.ps1` on Windows) to install the manager manually.
 
 Note: plugin `nvim-treesitter` requires at least the latest stable [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 

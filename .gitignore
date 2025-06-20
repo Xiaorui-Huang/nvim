@@ -62,9 +62,5 @@ tags
 # Persistent undo
 [._]*.un~
 
-
-# Packer files
-plugin/packer_compiled.lua
-
 # Copilot files
 pack

@@ -88,7 +88,7 @@ lsp.ensure_installed({
 
 -- don't initialize this language server
 lsp.skip_server_setup({
-    -- we will use rust-tools to setup rust_analyzer
+    -- use rustaceanvim for rust_analyzer integration
     -- 'rust_analyzer',
     "clangd",
 })
@@ -180,9 +180,7 @@ cmp.setup({
     }),
 })
 
--- require('rust-tools').setup({
---     server = lsp.build_options('rust_analyzer', { single_file_support = false, }),
--- })
+
 
 -- https://www.jvt.me/posts/2022/03/01/neovim-format-on-save/
 -- vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ async = false })]]
