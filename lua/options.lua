@@ -59,8 +59,8 @@ if wsl_interop and wsl_interop:find("WSL") then
   vim.g.clipboard = {
     name = "WslClipboard",
     copy =  { ['+'] = 'clip.exe', ['*'] = 'clip.exe' },
-    paste = { ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard))',
-              ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard))' },
+    paste = { ['+'] = 'powershell.exe -NoProfile -c Get-Clipboard -Raw',
+              ['*'] = 'powershell.exe -NoProfile -c Get-Clipboard -Raw' },
     cache_enabled = 0,
   }
 end
