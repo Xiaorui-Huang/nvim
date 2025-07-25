@@ -60,8 +60,8 @@ if wsl_interop and wsl_interop:find("WSL") then
     name = "WslClipboard",
     copy =  { ['+'] = 'clip.exe', ['*'] = 'clip.exe' },
     paste = {
-      ['+'] = 'powershell.exe -NoProfile -Command Get-Clipboard -Raw | tr -d \r',
-      ['*'] = 'powershell.exe -NoProfile -Command Get-Clipboard -Raw | tr -d \r',
+      ['+'] = 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+      ['*'] = 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))'
     },
     cache_enabled = 0,
   }
