@@ -57,4 +57,10 @@ if (not vim.g.vscode) then
     }
 end
 
-require 'nvim-treesitter.configs'.setup(config)
+-- Setup treesitter if available
+local ok, ts_config = pcall(require, 'nvim-treesitter.configs')
+if ok then
+    ts_config.setup(config)
+else
+    vim.notify('nvim-treesitter not found. Install it with: :Lazy install', vim.log.levels.WARN)
+end

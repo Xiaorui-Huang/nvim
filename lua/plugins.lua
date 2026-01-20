@@ -45,7 +45,7 @@ return {
   },
   {
     'kylechui/nvim-surround',
-    tag = '*',
+    version = '*',
     config = function()
       require('nvim-surround').setup()
     end,
