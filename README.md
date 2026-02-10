@@ -16,8 +16,6 @@ My Neovim configurations, made for cross machine/OS portability
 3. Run `:Lazy sync` within Neovim to install plugins.
    You can also run `lazy_unix.sh` (or `lazy_windows.ps1` on Windows) to install the manager manually.
 
-Note: plugin `nvim-treesitter` requires at least the latest stable [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
-
 ## Copilot
 Follow instructions here https://github.com/github/copilot.vim
 

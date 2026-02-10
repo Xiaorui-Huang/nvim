@@ -5,7 +5,6 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
   { 'ellisonleao/gruvbox.nvim' },
-  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
   {
     'numToStr/Comment.nvim',
     config = function()
