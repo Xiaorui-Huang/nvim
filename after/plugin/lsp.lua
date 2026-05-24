@@ -29,14 +29,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 -- Add borders to floating windows
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-    vim.lsp.handlers.hover,
-    { border = 'rounded' }
-)
-vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-    vim.lsp.handlers.signature_help,
-    { border = 'rounded' }
-)
+vim.lsp.handlers['textDocument/hover'] = function(err, result, ctx, config)
+    return vim.lsp.handlers.hover(err, result, ctx, vim.tbl_extend('keep', config or {}, { border = 'rounded' }))
+end
+vim.lsp.handlers['textDocument/signatureHelp'] = function(err, result, ctx, config)
+    return vim.lsp.handlers.signature_help(err, result, ctx, vim.tbl_extend('keep', config or {}, { border = 'rounded' }))
+end
 
 -- You'll find a list of language servers here:
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
