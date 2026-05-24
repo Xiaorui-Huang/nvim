@@ -21,14 +21,9 @@ return {
   'mbbill/undotree',
   'tpope/vim-fugitive',
   { 'mrcjkb/rustaceanvim', version = '^6' },
-  {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v1.x',
+  { 'neovim/nvim-lspconfig' },
+  { 'hrsh7th/nvim-cmp',
     dependencies = {
-      { 'neovim/nvim-lspconfig' },
-      { 'williamboman/mason.nvim' },
-      { 'williamboman/mason-lspconfig.nvim' },
-      { 'hrsh7th/nvim-cmp' },
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'hrsh7th/cmp-buffer' },
       { 'hrsh7th/cmp-path' },
