@@ -1,11 +1,7 @@
 -- clangd setup block removed
 
--- Setup LSP capabilities with cmp integration
-local capabilities = vim.tbl_deep_extend(
-    'force',
-    vim.lsp.protocol.make_client_capabilities(),
-    require('cmp_nvim_lsp').default_capabilities()
-)
+-- Setup LSP capabilities with blink.cmp integration
+local capabilities = require('blink.cmp').get_lsp_capabilities()
 
 -- This is where you enable features that only work
 -- if there is a language server active in the file
@@ -102,51 +98,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 
--- Completion setup with cmp
-local cmp = require('cmp')
-require('luasnip.loaders.from_vscode').lazy_load()
-
-cmp.setup({
-    sources = {
-        { name = 'nvim_lsp' },
-        { name = 'buffer' },
-        { name = 'luasnip' },
-    },
-    snippet = {
-        expand = function(args)
-            require('luasnip').lsp_expand(args.body)
-        end,
-    },
-    mapping = cmp.mapping.preset.insert({
-        -- Super tab
-        ['<Tab>'] = cmp.mapping(function(fallback)
-            local luasnip = require('luasnip')
-            local col = vim.fn.col('.') - 1
-
-            if luasnip.expand_or_locally_jumpable() then
-                luasnip.expand_or_jump()
-            elseif cmp.visible() then
-                cmp.select_next_item({ behavior = 'select' })
-            elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-                fallback()
-            else
-                cmp.complete()
-            end
-        end, { 'i', 's' }),
-
-        -- Super shift tab
-        ['<S-Tab>'] = cmp.mapping(function(fallback)
-            local luasnip = require('luasnip')
-
-            if luasnip.locally_jumpable(-1) then
-                luasnip.jump(-1)
-            elseif cmp.visible() then
-                cmp.select_prev_item({ behavior = 'select' })
-            else
-                fallback()
-            end
-        end, { 'i', 's' }),
-
-        ['<CR>'] = cmp.mapping.confirm({ select = false }),
-    }),
-})
+-- Completion is handled by blink.cmp (configured in plugins.lua)
