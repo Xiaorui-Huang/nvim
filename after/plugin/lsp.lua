@@ -1,7 +1,11 @@
 -- clangd setup block removed
 
 -- Setup LSP capabilities with blink.cmp integration
-local capabilities = require('blink.cmp').get_lsp_capabilities()
+-- blink.cmp is disabled inside VS Code's Neovim extension (see plugins.lua),
+-- since VS Code's own IntelliSense handles completion there.
+local capabilities = vim.g.vscode
+    and vim.lsp.protocol.make_client_capabilities()
+    or require('blink.cmp').get_lsp_capabilities()
 
 -- This is where you enable features that only work
 -- if there is a language server active in the file

@@ -25,6 +25,7 @@ return {
   {
     'saghen/blink.cmp',
     version = '*',
+    cond = not vim.g.vscode,
     dependencies = { 'rafamadriz/friendly-snippets' },
     opts = {
       keymap = { preset = 'super-tab' },
